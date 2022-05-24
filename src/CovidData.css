@@ -1,0 +1,145 @@
+body {
+    background-color: rgb(83, 237, 206);
+    }
+    .covidData {
+    background-color: rgb(58, 143, 133);
+    height: 90vh;
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 6px;
+    padding: 10px;
+    }
+    
+    /* input stylings */
+    
+    .covidData__form {
+    padding: 10px;
+    margin: 20px;
+    }
+    .covidData__input input {
+    width: 400px;
+    height: 35px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    }
+    .covidData__input button {
+    width: 100px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 5px 10px rgb(71, 67, 67);
+    cursor: pointer;
+    }
+    
+    /* detail stylings */
+    
+
+    .country {
+    font-size: 20px;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    position: relative;
+    top: 25px;
+    left: -125px;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 2px;
+    text-shadow: 0px 1px 2px rgb(71, 67, 67);
+    box-shadow: 5px 5px 5px rgb(71, 67, 67);
+
+    }
+    .cases {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    position: relative;
+    top: -147px;
+    left: 125px;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 2px;
+    text-shadow: 0px 1px 2px rgb(71, 67, 67);
+    box-shadow: 5px 5px 5px rgb(71, 67, 67);
+    }
+    .death {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    position: relative;
+    top: -110px;
+    left: -125px;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 2px;
+    text-shadow: 0px 1px 2px rgb(71, 67, 67);
+    box-shadow: 5px 5px 5px rgb(71, 67, 67);
+    }
+    .recovered {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    position: relative;
+    top: -282px;
+    left: 125px;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 2px;
+    text-shadow: 0px 1px 2px rgb(71, 67, 67);
+    box-shadow: 5px 5px 5px rgb(71, 67, 67);
+    }
+  .title1{
+      color: blue;
+      font-size:x-large;
+      font-family:fangsong ;
+  }
+  .title2{
+      color: red;
+      font-size:x-large;
+      font-family:fangsong ;
+  }
+  .title3{
+      color: #ff9800;
+      font-size:x-large;
+      font-family:fangsong ;
+  }
+  .title4{
+      color: #054c05;
+      font-size:x-large;
+      font-family:fangsong ;
+  }
+  .data{
+      position: relative;
+      top:4px;
+  }

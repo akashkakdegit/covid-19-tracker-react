@@ -1,7 +1,7 @@
 In this project, we will create a web application COVID-19 Tracker using ReactJS and real-time API. In this web application, when we enters the name of the country, it will display the Country name, Cases, Deaths, Recovered.
 
 
-Pre-requisites:
+#### Pre-requisites:
 
 Basic JavaScript such as functions, types of variables, objects, etc.
 ReactJS development setup for web development.
@@ -10,7 +10,7 @@ APIs knowledge to fetch real-time data.
 Basic CSS properties for styling and designing for the web application.
 
 
-Approach:
+#### Approach:
 
 Set up the development environment, install all the required dependencies.
 In the App.js file, create and initialise a component that is used to hold the code of the web application.
@@ -20,35 +20,35 @@ Use CSS for stylings of the component file and import the CSS file in the compon
 
 Below is the step by the step implementation of the above approach:
 
-Step 1: Create a React application using the following command:
+**Step 1:** Create a React application using the following command:
         npx create-react-app covid-19-tracker-in-react
 
-Step 2: After creating our project folder i.e.covid-19-tracker-in-react, move to it using the following command:
+**Step 2:** After creating our project folder i.e.covid-19-tracker-in-react, move to it using the following command:
         cd covid-19-tracker-in-react
 
 In that created folder go to src folder and delete App.test.js, logo.svg and setupTests.js because these files are not required in this project and add component files used to hold the code for the application. Our component name is CovidData and file name is CovidData.js and for stylings add CSS file CovidData.css.
 
-Project Structure: It will look like the following:
+**Project Structure:** It will look like the following:
 
->node_modules
->public
->src
- #  App.css
- JS App.js
- #  CovidData.css
- JS CovidData.js
- JS index.js
- js reportWebVitals.js
-    .gitignore
- {} package-lock.json
- {} package.json
+- node_modules
+- public
+- src
+  - App.css
+  - App.js
+  - CovidData.css
+  - CovidData.js
+  - index.js
+ - reportWebVitals.js
+- .gitignore
+- {} package-lock.json
+- {} package.json
     README.md
 
 
-Step 3: Now, in App.js, we will create the component file, that will hold the code for the application.
+**Step 3:** Now, in App.js, we will create the component file, that will hold the code for the application.
 
-App.js
-
+### App.js
+```
 import "./App.css";
 import CovidData from "./CovidData";
   
@@ -59,69 +59,70 @@ function App() {
 }
   
 export default App;
+```
 
 Our component name is CovidData and we have imported this component file in App.js.
 
-Step 4: In the CovidData.js file, we will create the form to take the input and when the form is submitted then it will fetch the data from the API with the help of useEffect Hook and set the fetched data in the variable objects using useState Hook. When the data is fetched then pass the variable objects using JSX expression to display the data. To get data, real-time API we have used the “https://disease.sh/v3/covid-19/countries” API.
+**Step 4:** In the CovidData.js file, we will create the form to take the input and when the form is submitted then it will fetch the data from the API with the help of useEffect Hook and set the fetched data in the variable objects using useState Hook. When the data is fetched then pass the variable objects using JSX expression to display the data. To get data, real-time API we have used the “https://disease.sh/v3/covid-19/countries” API.
 
-CovidData.js
+### CovidData.js
 
+```
 import React, { useEffect, useState } from "react";
 import "./CovidData.css";
-
+  
 function CovidData() {
-const [country, setCountry] = useState("");
-const [cases, setCases] = useState("");
-const [recovered, setRecovered] = useState("");
-const [deaths, setDeaths] = useState("");
-const [userInput, setUserInput] = useState("");
-
-useEffect(() => {
-	fetch("https://disease.sh/v3/covid-19/countries")
-	.then((res) => res.json())
-	.then((data) => {
-		setData(data);
-	});
-}, []);
-
-const setData = ({
-	country,
-	cases,
-	deaths,
-	recovered
-}) => {
-	setCountry(country);
-	setCases(cases);
-	setRecovered(recovered);
-	setDeaths(deaths);
-};
-
-const handleSearch = (e) => {
-	setUserInput(e.target.value);
-};
-const handleSubmit = (props) => {
-	props.preventDefault();
-	fetch(`https://disease.sh/v3/covid-19/countries/${userInput}`)
-	.then((res) => res.json())
-	.then((data) => {
-		setData(data);
-	});
-};
-
-return (
-	<div className="covidData">
-	<h1>COVID-19 CASES COUNTRY WISE</h1>
-	<div className="covidData__input">
-		<form onSubmit={handleSubmit}>
-		{/* input country name */}
-		<input onChange={handleSearch} placeholder="Enter Country Name" />
-		<br />
-		<button type="submit">Search</button>
-		</form>
-	</div>
-
-	{/* Showing the details of the country */}
-	
+  const [country, setCountry] = useState("");
+  const [cases, setCases] = useState("");
+  const [recovered, setRecovered] = useState("");
+  const [deaths, setDeaths] = useState("");
+  
+  useEffect(() => {
+    fetch("https://disease.sh/v3/covid-19/countries")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
+  
+  const setData = ({
+    country,
+    cases,
+    deaths,
+    recovered
+  }) => {
+    setCountry(country);
+    setCases(cases);
+    setRecovered(recovered);
+    setDeaths(deaths);
+  };
+  
+  const handleSearch = (e) => {
+    setUserInput(e.target.value);
+  };
+  const handleSubmit = (props) => {
+    props.preventDefault();
+    fetch(`https://disease.sh/v3/covid-19/countries/${userInput}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  };
+  
+  return (
+    <div className="covidData">
+      <h1>COVID-19 CASES COUNTRY WISE</h1>
+      <div className="covidData__input">
+        <form onSubmit={handleSubmit}>
+          {/* input country name */}
+          <input onChange={handleSearch} placeholder="Enter Country Name" />
+          <br />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+  
+      {/* Showing the details of the country */}
+      
 		<div className="country"><h3 className="title1">Country Name</h3> <span className="data"> {country} </span></div>
 
 		<div className="cases"><h3 className="title2">Cases </h3><span className="data">{cases}</span></div>
@@ -129,20 +130,18 @@ return (
 		<div className="death"><h3 className="title3">Deaths </h3><span className="data"> {deaths}</span></div>
 
 		<div className="recovered"><h3 className="title4">Recovered</h3><span className="data">{recovered}</span></div>
-		
-	</div>
+        </div>
 );
 }
 
 export default CovidData;
-
-
-
+```
       
-Step 5: For stylings, we have used basic CSS properties such as alignment, font style, etc.
+**Step 5:** For stylings, we have used basic CSS properties such as alignment, font style, etc.
 
-CovidData.css
+### CovidData.css
 
+```
 body {
     background-color: rgb(83, 237, 206);
     }
@@ -288,9 +287,10 @@ body {
       position: relative;
       top:4px;
   }
+```
 
-Step to Run Application: Run the application using the following command from the root directory of the project:
+**Step to Run Application:** Run the application using the following command from the root directory of the project:
 
 npm start
 
-Output: Now open your browser and go to http://localhost:3000/, you will see the output
+**Output:** Now open your browser and go to http://localhost:3000/, you will see the output

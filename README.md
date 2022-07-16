@@ -42,7 +42,7 @@ In that created folder go to src folder and delete App.test.js, logo.svg and set
 - .gitignore
 - {} package-lock.json
 - {} package.json
-    README.md
+- README.md
 
 
 **Step 3:** Now, in App.js, we will create the component file, that will hold the code for the application.
